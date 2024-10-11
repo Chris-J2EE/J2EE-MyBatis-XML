@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+
+    <!-- 控制台输出 -->
+    <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="java.sql">
+        <level value="DEBUG"/>
+    </logger>
+
+    <!-- MyBatis 日志配置 -->
+    <logger name="com.mylab021.mapper">
+        <level value="DEBUG" />
+    </logger>
+
+    <!-- 根日志配置 -->
+    <root>
+        <priority value ="DEBUG" />
+        <appender-ref ref="Console" />
+    </root>
+
+</log4j:configuration>
